@@ -1,0 +1,575 @@
+:root {
+    --purple-primary: #9333ea;
+    --pink-accent: #db2777;
+    --bg-light: #ffffff;
+    --text-light: #1a1435;
+    --bg-dark: #0f0a1f;
+    --text-dark: #f3f3f5;
+    --transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    --text-main: #1a1435; /* El color oscuro para modo claro */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    color: var(--text-main); /* Usamos la variable aquí */
+}
+
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+    --text-main: #f3f3f5; /* El color claro para modo oscuro */
+}
+
+/* ============================================================
+   NAVBAR TIPO ISLA (REEMPLAZO ESPECÍFICO)
+   ============================================================ */
+.navbar {
+    background: transparent !important; /* Hacemos la nav base invisible */
+    box-shadow: none !important;
+    transition: var(--transition);
+    padding: 1.8rem 0; /* Espacio para que parezca que flota */
+}
+
+/* La cápsula interna que tiene el color y bordes */
+.nav-capsule {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(20px)!important;
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 100px; /* Bordes redondeados de Figma */
+    padding: 0.6rem 2.2rem;
+    transition: var(--transition);
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+/* Ajuste de cápsula en Modo Oscuro */
+.dark-mode .nav-capsule {
+    background: rgba(15, 10, 31, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Cuando haces scroll, la nav se compacta */
+.navbar.scrolled {
+    padding: 1rem 0;
+}
+
+.navbar.scrolled .nav-capsule {
+    background: rgba(255, 255, 255, 0.4) !important;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .navbar.scrolled .nav-capsule {
+    background: rgba(15, 10, 31, 0.5) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+/* 4. IMPORTANTE: Evitar que Bootstrap Mobile fuerce fondos sólidos */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(15, 10, 31, 0.8) !important; /* Solo aquí es sólido para que se lea el menú móvil */
+        border-radius: 20px;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+}
+
+/* Color de links y marca */
+.nav-link, .navbar-brand {
+    color: var(--text-main) !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.nav-link:hover {
+    color: var(--purple-primary) !important;
+}
+
+/* Estética del botón de tema */
+#theme-icon {
+    font-size: 1.1rem;
+    color: var(--purple-primary);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+}
+/* Contenedor padre relativo para que el badge se pegue a él */
+.hero-img-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilo de la Viñeta (Badge) */
+.floating-badge {
+    position: absolute;
+    /* Ajusta estas posiciones para que "atraviese" la esquina como en Figma */
+    top: -20px; 
+    right: -30px;
+    
+    background: rgba(255, 255, 255, 0.1); /* Transparencia */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    border-radius: 2.5rem;
+    z-index: 20;
+    
+    /* Aplicamos la animación de subir y bajar */
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* Contenido del texto dentro del badge */
+.badge-title {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1;
+}
+
+.badge-subtitle {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.3em;
+    color: var(--pink-accent);
+    margin-top: 5px;
+}
+
+/* Icono flotante individual (opcional para más detalle) */
+.badge-icon {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--glass-bg);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ===== LA ANIMACIÓN DE SUBIR Y BAJAR ===== */
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px); /* Sube 20 pixeles */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Ajuste para Modo Oscuro */
+.dark-mode .floating-badge {
+    background: rgba(15, 10, 31, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.main-title {
+    font-size: clamp(4rem, 10vw, 8rem);
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #9333ea, #db2777, #6366f1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Botones Personalizados */
+.btn-primary-custom {
+    background-color: var(--purple-primary);
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(147, 51, 234, 0.3);
+    color: white;
+}
+
+/* Mesh Gradient Animado */
+.mesh-gradient {
+    position: absolute;
+    background: radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.15), transparent),
+                radial-gradient(circle at 80% 70%, rgba(219, 39, 119, 0.1), transparent);
+    filter: blur(100px);
+    z-index: -1;
+    animation: meshMove 15s infinite alternate ease-in-out;
+}
+
+@keyframes meshMove {
+    from { transform: scale(1) translate(0, 0); }
+    to { transform: scale(1.2) translate(50px, -30px); }
+}
+
+/* Animaciones de entrada */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Color del icono del tema */
+#theme-icon {
+    font-size: 1.2rem;
+    color: var(--purple-primary);
+}
+
+.dark-mode #theme-icon {
+    color: #ffc107;
+}
+
+.py-60 { padding: 8rem 0; }
+.rounded-custom { border-radius: 4rem; }
+.rounded-custom-about { border-radius: 3rem; }
+.text-purple { color: var(--purple-primary); }
+.text-pink { color: var(--pink-accent); }
+.fw-black { font-weight: 900; }
+
+/* About Img */
+.about-img-wrapper { position: relative; }
+.grayscale-effect { filter: grayscale(1); transition: 1s; }
+.grayscale-effect:hover { filter: grayscale(0); transform: scale(1.05); }
+
+.quote-card {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 2.5rem;
+    max-width: 250px;
+    font-size: 0.8rem;
+}
+
+.dark-mode .quote-card { background: #1a1435; color: white; border: 1px solid rgba(255,255,255,0.1); }
+
+/* Skill Cards */
+.skill-card {
+    background: #f8f9fa;
+    padding: 2.5rem 1rem;
+    border-radius: 2.5rem;
+    transition: 0.5s;
+    border: 1px solid transparent;
+    /* CENTRADO INTERNO */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.skill-card:hover { transform: translateY(-10px); border-color: var(--purple-primary); }
+.dark-mode .skill-card { background: rgba(255,255,255,0.05); }
+
+/* Contact Form */
+.contact-form-wrapper {
+    max-width: 800px;
+    background: #fdfdff;
+    border-radius: 4rem;
+    border: 1px solid #eee;
+}
+.dark-mode .contact-form-wrapper { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1); }
+
+.input-custom {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 2rem;
+    padding: 1.2rem 2rem;
+}
+.dark-mode .input-custom { background: rgba(255,255,255,0.05); color: white; border: none; }
+
+.btn-submit {
+    background: linear-gradient(90deg, var(--purple-primary), var(--pink-accent));
+    color: white;
+    padding: 1.5rem;
+    border-radius: 2.5rem;
+    border: none;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+}
+.quote-card {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    background: rgba(255, 255, 255, 0.9); /* Un blanco casi sólido pero con un toque de transparencia */
+    padding: 2.5rem;
+    border-radius: 2.5rem;
+    max-width: 320px;
+    
+    /* ESTA ES LA MAGIA DE LA SOMBRA */
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.08),  /* Sombra suave principal */
+        0 20px 60px rgba(0, 0, 0, 0.05);  /* Sombra más larga para dar altura */
+    
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Un borde finito para resaltar el borde */
+    z-index: 10;
+}
+
+/* En modo oscuro, la sombra debe ser más profunda y oscura */
+.dark-mode .quote-card {
+    background: rgba(26, 20, 53, 0.8);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* El contenedor de cada punto (01, 02) */
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Curva de rebote elástico */
+    cursor: pointer;
+}
+
+/* Efecto al pasar el mouse sobre el bloque completo */
+.feature-item:hover {
+    transform: translateX(15px); /* Se desplaza a la derecha */
+}
+
+/* El número grande (01, 02) */
+.feature-item .display-5 {
+    transition: color 0.3s ease;
+}
+
+.feature-item:hover .display-5 {
+    color: var(--pink-accent) !important; /* Cambia de color al moverlo */
+}
+
+/* El texto que acompaña (Mentalidad Estructural...) */
+.feature-item small {
+    transition: letter-spacing 0.3s ease;
+}
+
+.feature-item:hover small {
+    letter-spacing: 0.15em; /* Se expande un poco al rebotar */
+}
+/* ============================================================
+   ESTO ES LO NUEVO QUE TE HACÍA FALTA (AGREGADO AL FINAL)
+   ============================================================ */
+
+/* 1. Clases para el texto cursiva y light del Figma */
+.italic { font-style: italic; }
+.fw-light { font-weight: 300; }
+
+/* Cuadrícula de 4x2 */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+/* Las miniaturas en la galería */
+.render-card {
+    height: 250px;
+    border-radius: 2rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.render-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Aquí sí cortamos un poco para que el grid sea uniforme */
+    transition: 0.5s ease;
+}
+
+.render-card:hover img {
+    filter: blur(8px) brightness(0.7);
+    transform: scale(1.05);
+}
+
+/* MODAL: Vista Grande */
+.gallery-modal {
+    display: none; 
+    position: fixed;
+    inset: 0; /* Cubre toda la pantalla */
+    background: rgba(10, 5, 20, 0.9);
+    backdrop-filter: blur(15px);
+    z-index: 10000;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor para que la imagen NO SE DEFORME */
+.modal-img-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fullImg {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 1rem;
+    object-fit: contain; /* ESTO evita que se deforme la imagen grande */
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+
+/* Botón de cerrar */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+/* Responsive: 2 columnas en tablets, 1 en celulares */
+@media (max-width: 992px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 576px) { .gallery-grid { grid-template-columns: 1fr; } }
+/* Forzar que todos los encabezados sigan el color del tema */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-main);
+}
+
+/* Ajuste para el texto "muted" en modo oscuro para que sea legible */
+.dark-mode .text-muted {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Ajuste para el nombre del producto o tarjeta si quedó negro */
+.dark-mode .product-title, 
+.dark-mode .about-text p {
+    color: #f3f3f5;
+}
+/* Contenedor: Controla el tamaño rectangular uniforme */
+.project-img-container {
+    width: 100%;
+    height: 450px; /* Ajusta esta altura a tu gusto (ej. 400px o 450px) */
+    position: relative;
+    overflow: hidden;
+    border-radius: 4rem; /* Mantengo tu estilo redondeado */
+    background-color: #1a1435;
+    transition: transform 0.5s ease;
+}
+
+/* La Imagen: Se adapta al contenedor sin deformarse */
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* CLAVE: Corta la imagen para llenar el rectángulo sin estirarla */
+    transition: filter 0.5s ease, transform 0.8s ease;
+}
+
+/* EFECTO BLUR AL PASAR EL MOUSE */
+.project-img-container:hover .project-img {
+    filter: blur(8px) brightness(0.7); /* Aplica el desenfoque y oscurece un poco */
+    transform: scale(1.1); /* Zoom ligero para dar dinamismo */
+}
+
+/* Opcional: Si quieres que aparezca un ícono o texto sobre el blur */
+.project-img-container::after {
+    content: 'VER PROYECTO';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.project-img-container:hover::after {
+    opacity: 1;
+}
+
+/* Para que los links de los proyectos (VER DEMO / GITHUB) se vean más limpios */
+.text-decoration-none {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.text-decoration-none::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--purple-primary);
+    transition: width 0.3s ease;
+}
+
+.text-decoration-none:hover::after {
+    width: 100%;
+}
+/* Espaciado masivo entre proyectos para el look de "galería" */
+.mb-huge {
+    margin-bottom: 12rem !important; /* Aproximadamente 192px de separación */
+}
+
+/* Opcional: añadir un separador sutil entre ellos */
+.project-row {
+    position: relative;
+    padding-bottom: 4rem;
+}
+
+/* Ajuste para móviles para que el espacio no sea excesivo en pantallas chicas */
+@media (max-width: 768px) {
+    .mb-huge {
+        margin-bottom: 6rem !important;
+    }
+}
+/* Esto asegura que la clase fade-in-up empiece invisible y desplazada */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Esta clase se activará mediante JS cuando el usuario llegue a la sección */
+.fade-in-up.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Opcional: añade un ligero retraso individual para que no aparezcan todas al mismo tiempo */
+.render-card:nth-child(1) { transition-delay: 0.1s; }
+.render-card:nth-child(2) { transition-delay: 0.2s; }
+.render-card:nth-child(3) { transition-delay: 0.3s; }
+.render-card:nth-child(4) { transition-delay: 0.4s; }
+.render-card:nth-child(5) { transition-delay: 0.5s; }
+.render-card:nth-child(5) { transition-delay: 0.5s; }
+.render-card:nth-child(5) { transition-delay: 0.5s; }
+.render-card:nth-child(5) { transition-delay: 0.5s; }
+.render-card:nth-child(5) { transition-delay: 0.5s; }
+.render-card:nth-child(5) { transition-delay: 0.5s; }
+.render-card:nth-child(5) { transition-delay: 0.5s; }
+.render-card:nth-child(5) { transition-delay: 0.5s; }
+/* ... y así sucesivamente si quieres el efecto "cascada" ... */

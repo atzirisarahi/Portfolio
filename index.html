@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atziri Berrospe | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="light-mode"> 
+    <nav class="navbar navbar-expand-lg fixed-top transition-all" id="mainNav">
+    <div class="container nav-capsule"> <a class="navbar-brand fw-bold tracking-widest" href="#">AB</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">Perfil</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Stack</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Obras</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                <li class="nav-item ms-lg-4">
+                    <button id="theme-toggle" class="btn btn-link nav-link">
+                        <i class="bi bi-moon-stars-fill" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <section class="hero-section d-flex align-items-center relative overflow-hidden">
+        <div class="mesh-gradient absolute inset-0"></div>
+        <div class="container relative z-10">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="hero-tag mb-4">
+                        <span class="line"></span>
+                        <span class="tag-text">ARQUITECTURA & CÓDIGO</span>
+                    </div>
+                    <h1 class="display-1 fw-bold main-title">
+                        Atziri <br>
+                        <span class="gradient-text">Berrospe</span>
+                    </h1>
+                    <p class="lead mb-5 text-muted fw-light">
+                        Arquitecta de espacios físicos, desarrolladora de sistemas digitales.
+                    </p>
+                    <div class="d-flex align-items-center gap-4">
+                        <a href="#projects" class="btn btn-primary-custom">Explorar Obras <i class="bi bi-arrow-down-right"></i></a>
+                        <div class="social-links ps-4 border-start">
+                            <a href="https://www.linkedin.com/in/atzirisarahi-berrospe/"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://github.com/atzirisarahi"><i class="bi bi-github mx-3"></i></a>
+                            <a href="https://www.instagram.com/atzirisarahi/"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="hero-img-container">
+                    <img src="./rsc/escritorio.jpeg" alt="Workspace" class="img-fluid rounded-custom shadow-lg">
+    
+                    <div class="floating-badge top-badge">
+                     <div class="badge-content">
+                     <span class="badge-title">Java</span>
+                    <span class="badge-subtitle">FULL STACK</span>
+                </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-60 relative overflow-hidden">
+        <div class="container relative z-10">
+            <div class="row align-items-center gap-lg-5">
+                <div class="col-md-5 mb-5 mb-md-0">
+                    <div class="about-img-wrapper group">
+                        <img src="./rsc/perfil.jpg" alt="Atziri Berrospe" class="img-fluid rounded-custom-about grayscale-effect">
+                        <div class="quote-card shadow-2xl">
+                            <p class="mb-0 italic font-bold">"Diseñar un edificio o escribir código requiere lo mismo: una visión clara de cómo cada detalle contribuye a la armonía del conjunto."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-pink-600 fw-bold tracking-widest text-xs uppercase">Génesis Profesional</span>
+                    </div>
+                    <h3 class="display-4 fw-bold mb-5 leading-tight">
+                        Arquitecta de <br>
+                        <span class="gradient-text">Espacios y Developer</span>
+                    </h3>
+                    <div class="about-text space-y-4">
+                        <p class="lead fw-light">Del diseño de planos a la creación de interfaces: aplico la estética y el orden de la arquitectura en cada línea de <strong class="text-purple">código</strong>.</p>
+                        <p class="lead fw-light">Construyo aplicaciones con <strong>Java</strong> y <strong>Spring Boot</strong>, priorizando la limpieza visual y la experiencia de usuario a través de  <strong>JavaScript</strong>.</p>
+                    </div>
+                    <div class="row mt-5">
+    <div class="col-6 feature-item"> <span class="display-5 fw-bold text-purple d-block">01</span>
+        <small class="tracking-widest uppercase fw-black text-pink">Mentalidad Estructural</small>
+    </div>
+    <div class="col-6 feature-item"> <span class="display-5 fw-bold text-indigo d-block">02</span>
+        <small class="tracking-widest uppercase fw-black text-purple">Precisión Estética</small>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="skills" class="py-60 bg-white-dark transition-colors">
+    <div class="container text-center mb-5">
+        <span class="text-pink-600 fw-bold tracking-widest text-xs uppercase">Capacidades</span>
+        <h3 class="display-3 fw-bold mt-3">Módulos de <span class="italic fw-light text-purple">Creación Digital</span></h3>
+    </div>
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="skill-card">
+                    <i class="bi bi-code-slash display-4"></i>
+                    <span class="d-block mt-3 fw-bold tracking-widest uppercase text-xs">Java</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="skill-card">
+                    <i class="bi bi-database-fill-gear display-4"></i>
+                    <span class="d-block mt-3 fw-bold tracking-widest uppercase text-xs">Spring Boot</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="skill-card">
+                    <i class="bi bi-filetype-html display-4"></i>
+                    <span class="d-block mt-3 fw-bold tracking-widest uppercase text-xs">HTML5</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="skill-card">
+                    <i class="bi bi-filetype-css display-4"></i>
+                    <span class="d-block mt-3 fw-bold tracking-widest uppercase text-xs">CSS3</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="skill-card">
+                    <i class="bi bi-filetype-js display-4"></i>
+                    <span class="d-block mt-3 fw-bold tracking-widest uppercase text-xs">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="skill-card">
+                    <i class="bi bi-bootstrap display-4"></i>
+                    <span class="d-block mt-3 fw-bold tracking-widest uppercase text-xs">Bootstrap</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="skill-card">
+                    <i class="bi bi-terminal display-4"></i>
+                    <span class="d-block mt-3 fw-bold tracking-widest uppercase text-xs">Python</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="skill-card">
+                    <i class="bi bi-git display-4"></i>
+                    <span class="d-block mt-3 fw-bold tracking-widest uppercase text-xs">Git</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="projects" class="py-60">
+        <div class="container text-center mb-5">
+            <span class="text-pink-600 fw-bold tracking-widest text-xs uppercase">Portafolio</span>
+            <h3 class="display-3 fw-bold mt-3">Proyectos <span class="italic fw-light text-purple">Seleccionados</span></h3>
+        </div>
+        <div class="container mt-5">
+            <div class="row align-items-center mb-huge">
+                <div class="col-md-7">
+                    <div class="project-img-container overflow-hidden rounded-custom" >
+                        <img src="./rsc/HiloNacional.png" alt="Core Framework" class="img-fluid project-img">
+                    </div>
+                </div>
+                <div class="col-md-5 ps-md-5 mt-4 mt-md-0">
+                    <span class="text-pink text-xs fw-black tracking-widest uppercase">Responsive Web Experience</span>
+                    <h4 class="display-5 fw-bold my-3">Hilo Nacional</h4>
+                    <p class="fst-italic text-muted">"Un homenaje digital a la industria textil: plataforma web que equilibra la riqueza visual de los tejidos con una interfaz limpia, funcional y responsiva."</p>
+                    <div class="d-flex gap-4 mt-4">
+                        <a href="" class="text-purple fw-bold text-xs tracking-widest text-decoration-none">VER DEMO <i class="bi bi-arrow-up-right"></i></a>
+                        <a href="https://github.com/ignaciozg/PI-HiloNacional-CH64" class="text-muted fw-bold text-xs tracking-widest text-decoration-none">GITHUB <i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center mb-huge flex-md-row-reverse">
+                <div class="col-md-7">
+                    <div class="project-img-container overflow-hidden rounded-custom">
+                        <img src="./rsc/ProActive.png" alt="Pro Active" class="img-fluid project-img">
+                    </div>
+                </div>
+                <div class="col-md-5 pe-md-5 mt-4 mt-md-0 text-md-end">
+                    <span class="text-pink text-xs fw-black tracking-widest uppercase">Interactive Web App</span>
+                    <h4 class="display-5 fw-bold my-3">ProActive</h4>
+                    <p class="fst-italic text-muted">"De la visión visual a la funcionalidad digital: una tienda deportiva que combina una estética limpia con un flujo de navegación fluido en JS y CSS."</p>
+                    <div class="d-flex gap-4 mt-4 justify-content-md-end">
+                        <a href="https://gabrielaesparza.github.io/1er-Hackathon-tienda-deportiva/" class="text-purple fw-bold text-xs tracking-widest text-decoration-none">VER DEMO <i class="bi bi-arrow-up-right"></i></a>
+                        <a href="https://github.com/GabrielaEsparza/1er-Hackathon-tienda-deportiva" class="text-muted fw-bold text-xs tracking-widest text-decoration-none">GITHUB <i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center mb-huge">
+                <div class="col-md-7">
+                    <div class="project-img-container overflow-hidden rounded-custom">
+                        <img src="./rsc/Agenda.jpeg" alt="Core Framework" class="img-fluid project-img">
+                    </div>
+                </div>
+                <div class="col-md-5 ps-md-5 mt-4 mt-md-0">
+                    <span class="text-pink text-xs fw-black tracking-widest uppercase">Sistema de Gestión de Contactos (Java POO)</span>
+                    <h4 class="display-5 fw-bold my-3">Agenda JAVA</h4>
+                    <p class="fst-italic text-muted">"Desarrollo de una aplicación robusta basada en Programación Orientada a Objetos (POO) para la administración eficiente de información. El proyecto se centra en la creación de un núcleo lógico escalable, implementando algoritmos de búsqueda y validaciones personalizadas que aseguran la integridad de los datos (evitando registros duplicados)."</p>
+                    <div class="d-flex gap-4 mt-4">
+                    
+                        <a href="https://github.com/Axsort/Hackathon_2_Generation_Mexico" class="text-muted fw-bold text-xs tracking-widest text-decoration-none">GITHUB <i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-60">
+    <div class="container">
+        <div class="row align-items-end mb-5">
+            <div class="col-md-8">
+                <span class="text-pink fw-bold tracking-widest text-xs uppercase">Visualización</span>
+                <h3 class="display-3 fw-bold mt-2">Galería de <span class="italic fw-light text-purple">Renders</span></h3>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <p class="text-muted fw-light">Explorando la intersección entre el espacio físico y la imaginación digital.</p>
+            </div>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="render-card shadow-lg fade-in-up"><img src="./rsc/Exterior.jpg" alt="Casa Basteri-01"></div>
+            <div class="render-card shadow-lg fade-in-up"><img src="./rsc/CAMASTROS 01.jpg" alt="Casa Basteri-02"></div>
+            <div class="render-card shadow-lg fade-in-up"><img src="./rsc/SALA TERRAZA ZOOM.jpg" alt="Casa Basteri-03"></div>
+            <div class="render-card shadow-lg fade-in-up"><img src="./rsc/ZOOM TERRAZA.jpg" alt="Casa Basteri-04"></div>
+            
+            <div class="render-card shadow-lg fade-in-up"><img src="./rsc/y12 cine.jpg" alt="Casa Yucas-01"></div>
+            <div class="render-card shadow-lg fade-in-up"><img src="./rsc/y12 sala.jpg" alt="Casa Yucas-02"></div>
+            <div class="render-card shadow-lg fade-in-up"><img src="./rsc/y12 sala 02.jpg" alt="Casa Yucas-03"></div>
+            <div class="render-card shadow-lg fade-in-up"><img src="./rsc/y12 fachada.jpg" alt="Casa Yucas-04"></div>
+
+            <div class="render-card shadow-lg fade-in-up"><img src="./rsc/y12 comedor.jpg" alt="Casa Yucas-05"></div>
+            <div class="render-card shadow-lg fade-in-up"><img src="./rsc/y12 patio.jpg" alt="Casa Yucas-06"></div>
+            <div class="render-card shadow-lg fade-in-up"><img src="./rsc/y12 recamara blanca 01.jpg" alt="Casa Yucas-07"></div>
+            <div class="render-card shadow-lg fade-in-up"><img src="./rsc/puerta del roble rec 02.jpg" alt="Casa Puerta del Roble"></div>
+        </div>
+    </div>
+</section>
+
+<div id="galleryModal" class="gallery-modal">
+    <span class="close-modal">&times;</span>
+    <div class="modal-img-container">
+        <img class="modal-content" id="fullImg">
+    </div>
+</div>
+
+    <section id="contact" class="py-60 contact-bg">
+        <div class="container text-center">
+            <h3 class="display-2 fw-bold mb-5">Construyamos algo <br><span class="italic fw-light gradient-text">extraordinario</span>.</h3>
+            <div class="contact-form-wrapper mx-auto shadow-lg">
+                <form id="portfolio-contact" action="https://formspree.io/f/meelnakp" method="POST" class="p-4 p-md-5">
+    <div class="row g-4">
+        <div class="col-md-6 text-start">
+            <label class="label-custom">NOMBRE</label>
+            <input type="text" name="name" id="nombre" class="form-control input-custom" placeholder="Atziri..." required>
+        </div>
+        <div class="col-md-6 text-start">
+            <label class="label-custom">EMAIL</label>
+            <input type="email" name="email" id="email" class="form-control input-custom" placeholder="atziri@..." required>
+        </div>
+        <div class="col-12 text-start">
+            <label class="label-custom">IDEA DEL PROYECTO</label>
+            <textarea name="message" id="mensaje" class="form-control input-custom" rows="5" placeholder="Hablemos de código..." required></textarea>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn-submit w-100">ENVIAR MENSAJE <i class="bi bi-send-fill ms-2"></i></button>
+        </div>
+    </div>
+    <input type="hidden" name="_subject" value="Nuevo mensaje desde tu Portfolio">
+</form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 border-top">
+        <div class="container text-center">
+            <div class="text-2xl fw-bold tracking-widest mb-3">ATZIRI BERROSPE</div>
+            <p class="text-muted text-xs tracking-widest uppercase">Desarrolladora Java Full Stack | Arquitecta</p>
+            <div class="mt-4 d-flex justify-content-center gap-5 uppercase text-xs fw-bold">
+                <a href="https://www.linkedin.com/in/atzirisarahi-berrospe/" class="nav-link">LinkedIn</a>
+                <a href="https://github.com/atzirisarahi" class="nav-link">GitHub</a>
+                <a href="https://www.instagram.com/atzirisarahi/" class="nav-link">Instagram</a>
+            </div>
+            <p class="mt-5 text-muted text-xs">© 2026 Atziri Berrospe | Estructura & Lógica</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
