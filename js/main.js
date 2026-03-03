@@ -1,10 +1,8 @@
-/**
- * main.js - Lógica del Portafolio Atziri Berrospe
- */
+// LOGICA PORTAFOLIO -- Atziri Berrospe
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. GESTIÓN DE MODO OSCURO ---
+    // --- 1. MODO OSCURO ---
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
@@ -28,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- 2. EFECTO NAVBAR AL HACER SCROLL ---
+    // --- 2. EFECTO NAVBAR ---
     const nav = document.getElementById('mainNav');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -38,9 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- 3. ANIMACIÓN DE ENTRADA (REEMPLAZO DE FRAMER MOTION) ---
-    // Esta parte hace que las secciones "suban" y aparezcan al hacer scroll
-    // Reemplaza tu sección 3 de main.js con esto:
+    // --- 3. ANIMACIÓN DE ENTRADA ---
 const observerOptions = {
     threshold: 0.15,
     rootMargin: "0px 0px -50px 0px"
@@ -55,17 +51,16 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Aplicar a más elementos para que la página se sienta "viva"
 const animatedElements = document.querySelectorAll('section, .skill-card, .project-img-container');
 animatedElements.forEach(el => {
     el.classList.add('fade-in-up');
     observer.observe(el);
 });
 
-    // Seleccionamos todas las secciones que queremos animar
+    // Secciones a animar
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
-        section.classList.add('fade-in-up'); // Clase inicial en CSS
+        section.classList.add('fade-in-up'); 
         observer.observe(section);
     });
 });
@@ -109,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Seleccionamos todos los elementos con la clase fade-in-up
+    // Seleccion elementos con la clase fade-in-up
     const fadeElements = document.querySelectorAll('.fade-in-up');
     fadeElements.forEach(el => observer.observe(el));
 });
@@ -148,7 +143,6 @@ document.getElementById('portfolio-contact').addEventListener('submit', function
     }
 
     // Alerta de éxito antes de que Formspree procese el envío
-    // Nota: No usamos preventDefault aquí para que Formspree reciba el mensaje
     Swal.fire({
         icon: 'success',
         title: '¡Mensaje enviado!',

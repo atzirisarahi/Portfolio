@@ -6,26 +6,26 @@
     --bg-dark: #0f0a1f;
     --text-dark: #f3f3f5;
     --transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    --text-main: #1a1435; /* El color oscuro para modo claro */
+    --text-main: #1a1435; 
 }
 
 body {
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
-    color: var(--text-main); /* Usamos la variable aquí */
+    color: var(--text-main); 
 }
 
 body.dark-mode {
     background-color: var(--bg-dark);
     color: var(--text-dark);
-    --text-main: #f3f3f5; /* El color claro para modo oscuro */
+    --text-main: #f3f3f5; 
 }
 
 /* ============================================================
-   NAVBAR TIPO ISLA (REEMPLAZO ESPECÍFICO)
+   NAVBAR TIPO ISLA 
    ============================================================ */
 .navbar {
-    background: transparent !important; /* Hacemos la nav base invisible */
+    background: transparent !important; /* nav base invisible */
     box-shadow: none !important;
     transition: var(--transition);
     padding: 1.8rem 0; /* Espacio para que parezca que flota */
@@ -37,7 +37,7 @@ body.dark-mode {
     backdrop-filter: blur(20px)!important;
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 100px; /* Bordes redondeados de Figma */
+    border-radius: 100px; /* Bordes redondeados */
     padding: 0.6rem 2.2rem;
     transition: var(--transition);
     display: flex;
@@ -66,7 +66,7 @@ body.dark-mode {
     background: rgba(15, 10, 31, 0.5) !important;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
-/* 4. IMPORTANTE: Evitar que Bootstrap Mobile fuerce fondos sólidos */
+/* Evitar que Bootstrap Mobile fuerce fondos sólidos */
 @media (max-width: 991px) {
     .navbar-collapse {
         background: rgba(15, 10, 31, 0.8) !important; /* Solo aquí es sólido para que se lea el menú móvil */
@@ -107,7 +107,7 @@ body.dark-mode {
 /* Estilo de la Viñeta (Badge) */
 .floating-badge {
     position: absolute;
-    /* Ajusta estas posiciones para que "atraviese" la esquina como en Figma */
+    /* Ajuste de posiciones para que atraviese la esquina */
     top: -20px; 
     right: -30px;
     
@@ -119,7 +119,7 @@ body.dark-mode {
     border-radius: 2.5rem;
     z-index: 20;
     
-    /* Aplicamos la animación de subir y bajar */
+    /* Animación de subir y bajar */
     animation: floating 4s ease-in-out infinite;
 }
 
@@ -141,7 +141,7 @@ body.dark-mode {
     margin-top: 5px;
 }
 
-/* Icono flotante individual (opcional para más detalle) */
+/* Icono flotante individual */
 .badge-icon {
     position: absolute;
     top: -15px;
@@ -163,7 +163,7 @@ body.dark-mode {
         transform: translateY(0px);
     }
     50% {
-        transform: translateY(-20px); /* Sube 20 pixeles */
+        transform: translateY(-20px); 
     }
     100% {
         transform: translateY(0px);
@@ -319,12 +319,12 @@ body.dark-mode {
     position: absolute;
     bottom: -30px;
     right: -30px;
-    background: rgba(255, 255, 255, 0.9); /* Un blanco casi sólido pero con un toque de transparencia */
+    background: rgba(255, 255, 255, 0.9); 
     padding: 2.5rem;
     border-radius: 2.5rem;
     max-width: 320px;
     
-    /* ESTA ES LA MAGIA DE LA SOMBRA */
+    /* SOMBRA */
     box-shadow: 
         0 10px 30px rgba(0, 0, 0, 0.08),  /* Sombra suave principal */
         0 20px 60px rgba(0, 0, 0, 0.05);  /* Sombra más larga para dar altura */
@@ -333,7 +333,7 @@ body.dark-mode {
     z-index: 10;
 }
 
-/* En modo oscuro, la sombra debe ser más profunda y oscura */
+/* Modo oscuro, sombra más profunda y oscura */
 .dark-mode .quote-card {
     background: rgba(26, 20, 53, 0.8);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
@@ -348,7 +348,7 @@ body.dark-mode {
     cursor: pointer;
 }
 
-/* Efecto al pasar el mouse sobre el bloque completo */
+/* Efecto al pasar el mouse */
 .feature-item:hover {
     transform: translateX(15px); /* Se desplaza a la derecha */
 }
@@ -362,7 +362,7 @@ body.dark-mode {
     color: var(--pink-accent) !important; /* Cambia de color al moverlo */
 }
 
-/* El texto que acompaña (Mentalidad Estructural...) */
+/* El texto de Mentalidad Estructural */
 .feature-item small {
     transition: letter-spacing 0.3s ease;
 }
@@ -370,11 +370,8 @@ body.dark-mode {
 .feature-item:hover small {
     letter-spacing: 0.15em; /* Se expande un poco al rebotar */
 }
-/* ============================================================
-   ESTO ES LO NUEVO QUE TE HACÍA FALTA (AGREGADO AL FINAL)
-   ============================================================ */
 
-/* 1. Clases para el texto cursiva y light del Figma */
+/* Texto cursiva y light */
 .italic { font-style: italic; }
 .fw-light { font-weight: 300; }
 
@@ -396,7 +393,7 @@ body.dark-mode {
 .render-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Aquí sí cortamos un poco para que el grid sea uniforme */
+    object-fit: cover; /* grid uniforme */
     transition: 0.5s ease;
 }
 
@@ -467,10 +464,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Contenedor: Controla el tamaño rectangular uniforme */
 .project-img-container {
     width: 100%;
-    height: 450px; /* Ajusta esta altura a tu gusto (ej. 400px o 450px) */
+    height: 450px; 
     position: relative;
     overflow: hidden;
-    border-radius: 4rem; /* Mantengo tu estilo redondeado */
+    border-radius: 4rem; /* Estilo redondeado */
     background-color: #1a1435;
     transition: transform 0.5s ease;
 }
@@ -479,7 +476,7 @@ h1, h2, h3, h4, h5, h6 {
 .project-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* CLAVE: Corta la imagen para llenar el rectángulo sin estirarla */
+    object-fit: cover; 
     transition: filter 0.5s ease, transform 0.8s ease;
 }
 
@@ -489,7 +486,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.1); /* Zoom ligero para dar dinamismo */
 }
 
-/* Opcional: Si quieres que aparezca un ícono o texto sobre el blur */
+/* Texto sobre el blur */
 .project-img-container::after {
     content: 'VER PROYECTO';
     position: absolute;
@@ -534,7 +531,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 12rem !important; /* Aproximadamente 192px de separación */
 }
 
-/* Opcional: añadir un separador sutil entre ellos */
+/* Separador sutil entre ellos */
 .project-row {
     position: relative;
     padding-bottom: 4rem;
@@ -559,17 +556,16 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(0);
 }
 
-/* Opcional: añade un ligero retraso individual para que no aparezcan todas al mismo tiempo */
+/* Retraso en imagenes */
 .render-card:nth-child(1) { transition-delay: 0.1s; }
 .render-card:nth-child(2) { transition-delay: 0.2s; }
 .render-card:nth-child(3) { transition-delay: 0.3s; }
 .render-card:nth-child(4) { transition-delay: 0.4s; }
 .render-card:nth-child(5) { transition-delay: 0.5s; }
-.render-card:nth-child(5) { transition-delay: 0.5s; }
-.render-card:nth-child(5) { transition-delay: 0.5s; }
-.render-card:nth-child(5) { transition-delay: 0.5s; }
-.render-card:nth-child(5) { transition-delay: 0.5s; }
-.render-card:nth-child(5) { transition-delay: 0.5s; }
-.render-card:nth-child(5) { transition-delay: 0.5s; }
-.render-card:nth-child(5) { transition-delay: 0.5s; }
-/* ... y así sucesivamente si quieres el efecto "cascada" ... */
+.render-card:nth-child(6) { transition-delay: 0.6s; }
+.render-card:nth-child(7) { transition-delay: 0.7s; }
+.render-card:nth-child(8) { transition-delay: 0.8s; }
+.render-card:nth-child(9) { transition-delay: 0.9s; }
+.render-card:nth-child(10) { transition-delay: 0.10s; }
+.render-card:nth-child(11) { transition-delay: 0.11s; }
+.render-card:nth-child(12) { transition-delay: 0.12s; }
